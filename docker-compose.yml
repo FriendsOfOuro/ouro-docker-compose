@@ -3,7 +3,10 @@ version: '2'
 services:
 
   eventstore:
-    image: eventstore/eventstore
+    build:
+      context: ./build
+      args:
+        ES_VERSION: 3.9.0
     volumes:
       - "./data/eventstore:/var/lib/eventstore"
     ports:
