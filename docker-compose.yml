@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  eventstore:
+    image: eventstore/eventstore
+    volumes:
+      - "./data/eventstore:/var/lib/eventstore"
+    ports:
+     - "2113:2113"
+     - "1113:1113"
