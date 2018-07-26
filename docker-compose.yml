@@ -1,14 +1,10 @@
-version: '2'
+version: '3'
 
 services:
-
   eventstore:
-    build:
-      context: ./build
-      args:
-        ES_VERSION: 4.1.1-1
-    volumes:
-      - "./data/eventstore:/var/lib/eventstore"
-    ports:
-     - "2113:2113"
-     - "1113:1113"
+      image: "eventstore/eventstore:latest"
+      volumes:
+          - "./data/eventstore:/var/lib/eventstore"
+      ports:
+          - "2113:2113"
+          - "1113:1113"
